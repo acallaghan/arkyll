@@ -1,0 +1,6 @@
+header:
+  nav:
+  - title: About
+    url: /about/
+  - title: Talks
+    url: /talks/

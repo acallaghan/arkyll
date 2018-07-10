@@ -1,0 +1,16 @@
+{% assign header = page.header | default: layout.header %}
+{% if header == 'home' %}
+  {% include author_card.html %}
+{% else %}
+<header class="flex flex-column items-center">
+  <div class="mw7 w-100 ph3 pa2 ph4-ns mv3">
+  <nav class="dt w-100 border-box">
+    <a class="dtc v-mid mid-gray link dim w-10" href="#" title="Home">
+      <img src="http://tachyons.io/img/logo.jpg" class="dib w2 h2 br-100" alt="Site Name">
+    </a>
+
+    {% include nav.html %}
+  </nav>
+  </div>
+</header>
+{% endif %}

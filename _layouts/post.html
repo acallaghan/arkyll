@@ -1,0 +1,40 @@
+---
+layout: default
+class: post
+header: post
+---
+
+<main class="flex flex-column items-center">
+  {% if page.header == 'hero' %}
+  <article class="mw10 w-100">
+    <header class="bg-gold sans-serif">
+      <div class="mw9 center pa4 pt5-ns ph7-l">
+        <h1 class="f2 f1-m f-headline-l measure-narrow lh-title mv0">
+          <span class="bg-black-90 lh-copy white pa1 tracked-tight">
+          {{ page.title }}
+          </span>
+        </h1>
+        {% if page.subtitle %}
+          <h4 class="f3 fw1 georgia i">{{ page.subtitle }}</h4>
+        {% endif %}
+        <h5 class="f6 ttu tracked black-80">By {{ page.author | default: site.author }}</h5>
+      </div>
+    </header>
+    <div class="pa4 ph7-l mw9-l center mb0 lh-copy fw3 f4">
+      {{ content }}
+    </div>
+  </article>
+  {% else %}
+  <article class="mw7 w-100 ph3 ph4-ns">
+    <header class="mv5-ns">
+      <h1 class="f1-ns tc tl-ns lh-solid">{{ page.title }}</h1>
+      {% if page.subtitle %}
+        <h2 class="f3 fw4 lh-title silver mv2">{{ page.subtitle }}</h2>
+      {% endif %}
+    </header>
+    <div class="mw7 w-100 f5 f4-ns fw3 lh-copy mb0">
+      {{ content }}
+    </div>
+  </article>
+  {% endif %}
+</main>

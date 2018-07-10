@@ -1,0 +1,22 @@
+---
+layout: default
+class: page
+header: page
+---
+
+<main class="mw8 center flex flex-column flex-row-l justify-center">
+  <article class="mw7 centeri w-100 w-75-l ph3 ph4-ns">
+    {% unless page.header == 'hero' %}
+    <header class="mt5">
+      <h1 class="f-subheadline lh-title">{{ page.title }}</h1>
+      {% if page.subtitle %}
+      <h2 class="f1">{{ page.subtitle }}</h2>
+      {% endif %}
+    </header>
+    {% endunless %}
+
+    <div class="f5 f4-ns fw3 lh-copy mb0">
+    {{ content }}
+    </div>
+  </article>
+</main>

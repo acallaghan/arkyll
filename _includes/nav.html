@@ -1,0 +1,17 @@
+<div class="flex-l justify-between items-center">
+  <a class="black-80 link f3 fw6" href="{{ '/' | absolute_url }}" title="Home">{{ site.title }}</a>
+  <div class="flex-l items-center mt3 mt0-l">
+    <nav class="dtc v-mid w-75">
+      {% for link in site.data.theme.header.nav %}
+      {% if link.url contains 'http' %}
+      {% assign domain = '' %}
+      {% else %}
+      {% assign domain = site.url | append: site.baseurl %}
+      {% endif %}
+      <a href="{{ domain }}{{ link.url }}" class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns items-center" {% if link.url contains 'http' %}target="_blank"{% endif %}>
+        {{ link.title }}
+      </a>
+      {% endfor %}
+    </nav>
+  </div>
+</div>
