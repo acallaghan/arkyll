@@ -1,7 +1,7 @@
 <div class="flex flex-row justify-between items-center">
   <a class="{{ site.colour_scheme.text | default: 'near-white'}} dim link f3 fw6 w-50"
     href="{{ '/' | absolute_url }}" title="Home">{{ site.title }}</a>
-  <div class="flex flex-row items-center mt3 mt0-l mw5">
+  <div class="flex flex-row items-center mt0 mw5">
     <nav class="flex flex-row dtc v-mid w-100">
       {% for link in site.data.theme.header.nav %}
       {% if link.url contains 'http' %}
