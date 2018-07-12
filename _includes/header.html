@@ -1,14 +1,36 @@
 {% assign header = page.header | default: layout.header %}
 {% if header == 'home' %}
-  {% include author_card.html %}
+<header class="flex justify-center bg-{{ site.colour_scheme.background | default: 'near-black'}}">
+  <div class="flex flex-column items-center mw7 w-100 tc pv3 pv4-ns">
+    <div class="w-100 {{ site.colour_scheme.text | default: 'near-white'}}">
+      <img src="{{ site.author_card.avatar }}"
+           alt="Avatar of {{ site.author_card.name}}"
+           class="br-100 pa1 h4 w4">
+      <h1 class="f1 fw6 lh-solid">{{ site.author_card.name }}</h1>
+      <h2 class="f6 fw3 ttu tracked">{{ site.author_card.location }}</h2>
+    </div>
+    <div class="flex flex-row dtc v-mid w-70">
+      {% for link in site.data.theme.header.nav %}
+      {% if link.url contains 'http' %}
+      {% assign domain = '' %}
+      {% else %}
+      {% assign domain = site.url | append: site.baseurl %}
+      {% endif %}
+      <h2 class="w-100">
+        <a href="{{ domain }}{{ link.url }}"
+           class="link {{ site.colour_scheme.text | default: 'near-white'}} f4 fw3 ttu dim tracked items-center"
+           {% if link.url contains 'http' %}target="_blank"{% endif %}>
+          {{ link.title }}
+        </a>
+      </h2>
+      {% endfor %}
+    </div>
+  </div>
+</header>
 {% else %}
-<header class="flex flex-column items-center">
+<header class="flex flex-column items-center bg-{{ site.colour_scheme.background | default: 'near-black'}}">
   <div class="mw7 w-100 ph3 pa2 ph4-ns mv3">
   <nav class="dt w-100 border-box">
-    <a class="dtc v-mid mid-gray link dim w-10" href="#" title="Home">
-      <img src="http://tachyons.io/img/logo.jpg" class="dib w2 h2 br-100" alt="Site Name">
-    </a>
-
     {% include nav.html %}
   </nav>
   </div>

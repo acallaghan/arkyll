@@ -11,11 +11,7 @@ header: home
     <a class="link black-80 hover-silver" href="{{ post.url | relative_url }}">
       <article class="post pv4 bb b--light-gray">
         <div class="f5 fw3 silver lh-copy">
-          {% if post.last_modified_at %}
-          <span>{{ site.data.theme.text.updated }} <time>{{ post.last_modified_at | date: site.date_format }}</time></span>
-          {% else %}
-          <time>{{ post.date | date: site.date_format }}</time>
-          {% endif %}
+          {{ post.date | date: site.date_format }}
         </div>
         <h3 class="f3 f2-ns fw6 lh-title mt0 mb0">{{ post.title | escape }}</h3>
         <p class="f5 f4-ns fw3 lh-copy mv2">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
@@ -24,13 +20,5 @@ header: home
     </a>
     {% endfor %}
 
-    {% if site.posts.archive_path %}
-    <div class="inline-flex">
-      <a class="f5 f4-ns fw3 link black-80 hover-silver ba br2 bw1 mv4 pv2 ph3"
-         href="{{ site.posts.archive_path | relative_url }}">
-        Archive
-      </a>
-    </div>
-    {% endif %}
   </div>
 </section>
