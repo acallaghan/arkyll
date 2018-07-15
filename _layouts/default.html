@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang }}">
   {% include head.html %}
-  <body class="{% if layout.class %}{{ layout.class | join: ' '}}{% endif %}">
+  <body class="w-100 {% if layout.class %}{{ layout.class | join: ' '}}{% endif %}">
     {% include header.html %}
     {{ content }}
     {% include footer.html %}
