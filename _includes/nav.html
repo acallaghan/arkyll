@@ -10,7 +10,7 @@
       {% assign domain = site.url | append: site.baseurl %}
       {% endif %}
       <a href="{{ domain }}{{ link.url }}"
-        class="link {{ site.colour_scheme.text | default: 'near-white'}} dim f5 f4-ns dib mr3 mr4-ns fw3 items-center justify-between w-100 tc"
+        class="link {{ site.colour_scheme.text | default: 'near-white'}} dim f5 f4-ns dib mr3 mr4-ns items-center justify-between w-100 tc"
         {% if link.url contains 'http' %}target="_blank"{% endif %}>
         {{ link.title }}
       </a>

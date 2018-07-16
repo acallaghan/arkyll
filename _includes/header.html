@@ -7,7 +7,7 @@
            alt="Avatar of {{ site.author_card.name}}"
            class="br-100 dn dib-ns pa1 h4 w4">
       <h1 class="f1-ns f3 fw6 lh-solid">{{ site.author_card.name }}</h1>
-      <h2 class="f6 fw3 ttu tracked">{{ site.author_card.location }}</h2>
+      <h2 class="f6 fw4 ttu tracked">{{ site.author_card.location }}</h2>
     </div>
     <div class="flex flex-row dtc v-mid w-70">
       {% for link in site.data.theme.header.nav %}
@@ -18,7 +18,7 @@
       {% endif %}
       <h2 class="w-100">
         <a href="{{ domain }}{{ link.url }}"
-           class="link {{ site.colour_scheme.text | default: 'near-white'}} f4 fw3 ttu dim tracked items-center"
+           class="link {{ site.colour_scheme.text | default: 'near-white'}} f4 ttu dim tracked fw4 items-center"
            {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %}>
           {{ link.title }}
         </a>
